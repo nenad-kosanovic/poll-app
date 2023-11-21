@@ -26,5 +26,6 @@ Before starting application, ./migrate/migrate.go should run, in order to init t
 - Poll update
 - JWT and user session
 - Number of votes on poll is not limited and there is no option to remove vote.
+- There is no service layer and DI.
 
 
