@@ -1,26 +1,24 @@
 GET http://localhost:8000/api/polls HTTP/1.1
 
 ###
-
 POST http://localhost:8000/api/polls HTTP/1.1
 content-type: application/json
 
 {
     "Question": "Would you like to have Friday sync?",
     "PollAnswer": [
-        {"Text": "Yes"}
+        {"Text": "Yes"},
+        {"Text": "No"},
+        {"Text": "Maybe"}
     ]
 }
 
 ####
-
 GET http://localhost:8000/api/polls/1 HTTP/1.1
 
 ###
-
 DELETE http://localhost:8000/api/polls/4 HTTP/1.1
 
 
 ###
-
 PUT http://localhost:8000/api/polls/1/answers/1
