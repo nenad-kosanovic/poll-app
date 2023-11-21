@@ -20,12 +20,12 @@ Later if time permits JWT auth can also be implemented.
 Database connection string is set in ./app.env file. For local dev env, there od ./docker-compose.yml available in order to run db.
 Before starting application, ./migrate/migrate.go should run, in order to init tables.
 
-
 ## Missing functionality
 
 - Poll update
 - JWT and user session
 - Number of votes on poll is not limited and there is no option to remove vote.
 - There is no service layer and DI.
+- Tests are missing
 
 
