@@ -1,13 +1,11 @@
 package main
 
 import (
+	"log"
+	"net/http"
 	"poll-app/controllers"
 	"poll-app/initializers"
 	"poll-app/routes"
-	"log"
-	"net/http"
-
-	"github.com/gin-contrib/cors"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,9 +13,9 @@ import (
 var (
 	server *gin.Engine
 
-	PollController      controllers.PollController
+	PollController       controllers.PollController
 	PollAnswerController controllers.PollAnswerController
-	PollRouteController routes.PollRouteController
+	PollRouteController  routes.PollRouteController
 )
 
 func init() {
@@ -26,7 +24,6 @@ func init() {
 		log.Fatal("? Could not load environment variables", err)
 	}
 
-	log.Println(config.HelloMessage)
 	initializers.ConnectDB(&config)
 
 	PollController = controllers.NewPollController(initializers.DB)
@@ -41,12 +38,6 @@ func main() {
 	if err != nil {
 		log.Fatal("? Could not load environment variables", err)
 	}
-
-	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{"http://localhost:8000", config.ClientOrigin}
-	corsConfig.AllowCredentials = true
-
-	server.Use(cors.New(corsConfig))
 
 	router := server.Group("/api")
 	router.GET("/healthchecker", func(ctx *gin.Context) {
