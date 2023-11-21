@@ -14,8 +14,10 @@ func NewPollRouteController(pollController controllers.PollController) PollRoute
 	return PollRouteController{pollController}
 }
 
-func (qc *PollRouteController) PollRoute(rg *gin.RouterGroup) {
+func (pc *PollRouteController) PollRoute(rg *gin.RouterGroup) {
 
 	router := rg.Group("polls")
-	router.GET("", qc.pollController.FindPolls)
+	router.GET("/:pollId", pc.pollController.FindPollById)
+	router.GET("", pc.pollController.FindPolls)
+	router.POST("", pc.pollController.CreatePoll)
 }

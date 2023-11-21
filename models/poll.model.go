@@ -1,8 +1,18 @@
 package models
 
-import "github.com/google/uuid"
+import (
+	"gorm.io/gorm"
+)
 
 type Poll struct {
-	ID       uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primary_key" json:"id,omitempty"`
-	Question string    `gorm:"not null" json:"question,omitempty"`
+	gorm.Model
+	Question   string `gorm:"not null" json:"question,omitempty"`
+	PollAnswer []PollAnswer
+}
+
+type PollAnswer struct {
+	gorm.Model
+	Text   string `gorm:"not null" json:"text,omitempty"`
+	Votes  int    `gorm:"not null" json:"votes"`
+	PollId uint
 }
