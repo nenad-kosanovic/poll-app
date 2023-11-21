@@ -16,6 +16,7 @@ var (
 	server *gin.Engine
 
 	PollController      controllers.PollController
+	PollAnswerController controllers.PollAnswerController
 	PollRouteController routes.PollRouteController
 )
 
@@ -29,7 +30,8 @@ func init() {
 	initializers.ConnectDB(&config)
 
 	PollController = controllers.NewPollController(initializers.DB)
-	PollRouteController = routes.NewPollRouteController(PollController)
+	PollAnswerController = controllers.NewPollAnswerController(initializers.DB)
+	PollRouteController = routes.NewPollRouteController(PollController, PollAnswerController)
 
 	server = gin.Default()
 }

@@ -8,10 +8,11 @@ import (
 
 type PollRouteController struct {
 	pollController controllers.PollController
+	pollAnserController controllers.PollAnswerController
 }
 
-func NewPollRouteController(pollController controllers.PollController) PollRouteController {
-	return PollRouteController{pollController}
+func NewPollRouteController(pollController controllers.PollController, pollAnserController controllers.PollAnswerController) PollRouteController {
+	return PollRouteController{pollController,pollAnserController}
 }
 
 func (pc *PollRouteController) PollRoute(rg *gin.RouterGroup) {
@@ -21,4 +22,5 @@ func (pc *PollRouteController) PollRoute(rg *gin.RouterGroup) {
 	router.GET("", pc.pollController.FindPolls)
 	router.POST("", pc.pollController.CreatePoll)
 	router.DELETE("/:pollId", pc.pollController.DeletePoll)
+	router.PUT("/:pollId/answers/:pollAnswerId", pc.pollAnserController.AddVote)
 }
