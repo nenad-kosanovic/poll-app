@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gin-api-mysql-crud/initializers"
-	"gin-api-mysql-crud/models"
+	"poll-app/initializers"
+	"poll-app/models"
 	"log"
 )
 

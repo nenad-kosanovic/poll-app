@@ -1,9 +1,9 @@
 package main
 
 import (
-	"gin-api-mysql-crud/controllers"
-	"gin-api-mysql-crud/initializers"
-	"gin-api-mysql-crud/routes"
+	"poll-app/controllers"
+	"poll-app/initializers"
+	"poll-app/routes"
 	"log"
 	"net/http"
 

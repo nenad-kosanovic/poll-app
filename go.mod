@@ -1,4 +1,4 @@
-module gin-api-mysql-crud
+module poll-app
 
 go 1.21
 

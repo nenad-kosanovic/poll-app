@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gin-api-mysql-crud/controllers"
+	"poll-app/controllers"
 
 	"github.com/gin-gonic/gin"
 )

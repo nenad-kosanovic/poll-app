@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"fmt"
-	"gin-api-mysql-crud/models"
+	"poll-app/models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
