@@ -8,12 +8,15 @@ content-type: application/json
 {
     "Question": "Would you like to have Friday sync?",
     "PollAnswer": [
-        {"Text": "Yes"},
-        {"Text": "No"},
-        {"Text": "No sure"}
+        {"Text": "Yes"}
     ]
 }
 
 ####
 
-GET http://localhost:8000/api/polls/1 HTTP/1.1
+GET http://localhost:8000/api/polls/4 HTTP/1.1
+
+###
+
+
+DELETE http://localhost:8000/api/polls/4 HTTP/1.1

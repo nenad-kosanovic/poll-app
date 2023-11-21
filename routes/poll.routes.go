@@ -20,4 +20,5 @@ func (pc *PollRouteController) PollRoute(rg *gin.RouterGroup) {
 	router.GET("/:pollId", pc.pollController.FindPollById)
 	router.GET("", pc.pollController.FindPolls)
 	router.POST("", pc.pollController.CreatePoll)
+	router.DELETE("/:pollId", pc.pollController.DeletePoll)
 }
