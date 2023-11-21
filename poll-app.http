@@ -1,0 +1,19 @@
+GET http://localhost:8000/api/polls HTTP/1.1
+
+###
+
+POST http://localhost:8000/api/polls HTTP/1.1
+content-type: application/json
+
+{
+    "Question": "Would you like to have Friday sync?",
+    "PollAnswer": [
+        {"Text": "Yes"},
+        {"Text": "No"},
+        {"Text": "No sure"}
+    ]
+}
+
+####
+
+GET http://localhost:8000/api/polls/1 HTTP/1.1
